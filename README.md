@@ -5,7 +5,7 @@ This is in progress!
 
 
 
-
+![Diagram](reliability_diagram.png)
 
 
 
