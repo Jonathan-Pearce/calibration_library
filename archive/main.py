@@ -1,28 +1,28 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 from scipy.special import softmax
 
 import torch
 from torch import nn, optim
 from torch.nn import functional as F
-import torch.nn.init as init
 
 import torchvision
 import torchvision as tv
 import torchvision.transforms as transforms
 
 np.random.seed(0)
+torch.manual_seed(0)
 
 
+PATH = './cifar_net.pth'
+net_trained = Net()
+net_trained.load_state_dict(torch.load(PATH))
 
-PATH = './cifar10_resnet20.pth'
-net_trained = ResNet(BasicBlock, [3, 3, 3])
-net_trained.load_state_dict(torch.load(PATH,map_location=torch.device('cpu')))
-
+#########################################################################
 
 # Data transforms
-
 mean = [0.5071, 0.4867, 0.4408]
 stdv = [0.2675, 0.2565, 0.2761]
 
@@ -36,6 +36,7 @@ test_transforms = tv.transforms.Compose([
 test_set = tv.datasets.CIFAR10(root='./data', train=False, transform=test_transforms, download=True)
 testloader = torch.utils.data.DataLoader(test_set, pin_memory=True, batch_size=4)
 
+#########################################################################
 
 correct = 0
 total = 0
@@ -69,8 +70,8 @@ print(total)
 print(logits.shape)
 print(labels.shape)
 
-###########
-#metrics
+
+#########################################################################
 
 ece_criterion = ECELoss()
 #Torch version
@@ -78,32 +79,23 @@ logits_np = logits.numpy()
 labels_np = labels.numpy()
 
 #Numpy Version
-print(ece_criterion.loss(logits_np,labels_np, 15))
+print(ece_criterion.loss(logits_np,labels_np))
 
 softmaxes = softmax(logits_np, axis=1)
 
-print(ece_criterion.loss(softmaxes,labels_np,15,False))
+print(ece_criterion.loss(softmaxes,labels_np,True))
 
 mce_criterion = MCELoss()
 print(mce_criterion.loss(logits_np,labels_np))
 
-oe_criterion = OELoss()
-print(oe_criterion.loss(logits_np,labels_np))
 
-sce_criterion = SCELoss()
-print(sce_criterion.loss(logits_np,labels_np, 15))
+confHist = ConfidenceHistogram()
+confHist.plot(logits_np,labels_np,15)
 
-ace_criterion = ACELoss()
-print(ace_criterion.loss(logits_np,labels_np,15))
+relDia = ReliabilityDiagram()
+relDia.plot(logits_np,labels_np)
 
-tace_criterion = TACELoss()
-print(tace_criterion.loss(logits_np,labels_np,0.01,15))
+#########################################################################
 
-
-
-############
-#recalibration
-
-model = ModelWithTemperature(net_trained)
-# Tune the model temperature, and save the results
-model.set_temperature(testloader)
+net_calibrate = ModelWithTemperature(net_trained)
+net_calibrate.set_temperature(testloader)
