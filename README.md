@@ -1,11 +1,7 @@
 # calibration_library
 
-This is in progress!
 
-
-
-
-![Diagram](reliability_diagram.png)
+![Diagram](archive/reliability_diagram.png)
 
 
 
