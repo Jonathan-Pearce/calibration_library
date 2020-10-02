@@ -4,7 +4,9 @@
 
 A model calibration library currently under construction. Built for PyTorch models, this library enables users to evaluate their model's uncertainty estimates (probability estimates) using popular calibration metrics, train model wrappers that improve model calibration and generate data visualizations to identify where and how their model's are well calibrated or not.
 
-![Diagram](archive/reliability_diagram.png)
+![Diagram](plots/rel_diagram_test.png)
+
+![Diagram2](plots/conf_histogram_test.png)
 
 ## References
 
