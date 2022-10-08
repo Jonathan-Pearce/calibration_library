@@ -23,6 +23,15 @@
 [Beyond temperature scaling: Obtaining well-calibrated multiclass probabilities with Dirichlet calibration](https://arxiv.org/abs/1910.12656) - Meelis Kull, Miquel Perello-Nieto, Markus Kängsepp, Telmo Silva Filho, Hao Song, Peter Flach (NeurIPS 2019)
 * Classwise-ECE
 
+[Evaluating model calibration in classification](https://arxiv.org/abs/1902.06977) - Juozas Vaicenavicius, David Widmann, Carl Andersson, Fredrik Lindsten, Jacob Roll, Thomas B. Schön (AISTATS 2019)
+
+[Calibration tests in multi-class classification: A unifying framework](https://arxiv.org/abs/1910.11385) - David Widmann, Fredrik Lindsten, Dave Zachariah (NeurIPS 2019)
+
+[On Mixup Training: Improved Calibration and Predictive Uncertainty for Deep Neural Networks](https://arxiv.org/abs/1905.11001) - Sunil Thulasidasan, Gopinath Chennupati, Jeff Bilmes, Tanmoy Bhattacharya, Sarah Michalak (NeurIPS 2019)
+
+[Deep Anomaly Detection with Outlier Exposure](https://arxiv.org/abs/1812.04606) - Dan Hendrycks, Mantas Mazeika, Thomas Dietterich (ICLR 2019)
+* RMS, MAD and Soft F1 Score
+
 ## 2018
 [Trainable Calibration Measures for Neural Networks from Kernel Mean Embeddings](https://proceedings.mlr.press/v80/kumar18a.html) - Aviral Kumar, Sunita Sarawagi, Ujjwal Jain (ICML 2018)
 * MMCE
