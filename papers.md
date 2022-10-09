@@ -11,11 +11,19 @@
 
 [Soft Calibration Objectives for Neural Networks](https://arxiv.org/abs/2108.00106) - Archit Karandikar, Nicholas Cain, Dustin Tran, Balaji Lakshminarayanan, Jonathon Shlens, Michael C. Mozer, Becca Roelofs (NeurIPS 2021)
 
+[Calibrating Predictions to Decisions: A Novel Approach to Multi-Class Calibration](https://arxiv.org/abs/2107.05719) - Shengjia Zhao, Michael P. Kim, Roshni Sahoo, Tengyu Ma, Stefano Ermon (NeurIPS 2021)
+
+[Uncertainty Toolbox: an Open-Source Library for Assessing, Visualizing, and Improving Uncertainty Quantification](https://arxiv.org/abs/2109.10254) - Youngseog Chung, Ian Char, Han Guo, Jeff Schneider, Willie Neiswanger
+
 ## 2020
 [Measuring Calibration in Deep Learning](https://arxiv.org/abs/1904.01685) - Jeremy Nixon, Mike Dusenberry, Ghassen Jerfel, Timothy Nguyen, Jeremiah Liu, Linchuan Zhang, Dustin Tran
 * SCE, ACE
 
 [Calibrating Deep Neural Networks using Focal Loss](https://arxiv.org/abs/2002.09437) - Jishnu Mukhoti, Viveka Kulharia, Amartya Sanyal, Stuart Golodetz, Philip H.S. Torr, Puneet K. Dokania (NeurIPS 2020)
+
+[Individual Calibration with Randomized Forecasting](https://arxiv.org/abs/2006.10288) - Shengjia Zhao, Tengyu Ma, Stefano Ermon (ICML 2020)
+
+[Mix-n-Match: Ensemble and Compositional Methods for Uncertainty Calibration in Deep Learning](https://arxiv.org/abs/2003.07329) - Jize Zhang, Bhavya Kailkhura, T. Yong-Jin Han (ICML 2020)
 
 ## 2019
 [Verified Uncertainty Calibration](https://arxiv.org/abs/1909.10155) - Ananya Kumar, Percy Liang, Tengyu Ma (NeurIPS 2019)
