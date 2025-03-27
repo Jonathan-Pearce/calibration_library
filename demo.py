@@ -16,19 +16,19 @@ import torchvision as tv
 import torchvision.transforms as transforms
 
 sys.path.insert(1, 'models/')
-import resnet
+from models import resnet
 import metrics
 import recalibration
 import visualization
 
 np.random.seed(0)
 
-
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 PATH = './pretrained_models/cifar10_resnet20.pth'
 net_trained = resnet.ResNet(resnet.BasicBlock, [3, 3, 3])
-net_trained.load_state_dict(torch.load(PATH,map_location=torch.device('cpu')))
-
+net_trained.load_state_dict(torch.load(PATH))
+net_trained.to(device)
 
 # Data transforms
 
@@ -55,6 +55,7 @@ labels_list = []
 
 with torch.no_grad():
     for images, labels in testloader:
+        images, labels = images.to(device), labels.to(device)
         #outputs are the the raw scores!
         logits = net_trained(images)
         #add data to list
@@ -80,8 +81,8 @@ print(total)
 
 ece_criterion = metrics.ECELoss()
 #Torch version
-logits_np = logits.numpy()
-labels_np = labels.numpy()
+logits_np = logits.cpu().numpy()
+labels_np = labels.cpu().numpy()
 
 #Numpy Version
 print('ECE: %f' % (ece_criterion.loss(logits_np,labels_np, 15)))

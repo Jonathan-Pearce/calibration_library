@@ -45,13 +45,16 @@ class ModelWithTemperature(nn.Module):
         labels_list = []
         with torch.no_grad():
             for input, label in valid_loader:
+                input, label = input.cuda(), label.cuda()
                 input = input
                 logits = self.model(input)
                 logits_list.append(logits)
                 labels_list.append(label)
             logits = torch.cat(logits_list)
             labels = torch.cat(labels_list)
+        
 
+        logits, labels = logits.cpu(), labels.cpu()
         # Calculate NLL and ECE before temperature scaling
         before_temperature_nll = nll_criterion(logits, labels).item()
         before_temperature_ece = ece_criterion.loss(logits.numpy(),labels.numpy(),15)
