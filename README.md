@@ -250,13 +250,26 @@ Check out the [examples](examples/) directory for Jupyter notebooks demonstratin
 
 ## Documentation
 
-Full documentation is available at [Read the Docs](https://calibration-toolbox.readthedocs.io/) (once published).
+Full documentation is available at:
+- **GitHub Pages**: [https://jonathan-pearce.github.io/calibration-toolbox/](https://jonathan-pearce.github.io/calibration-toolbox/) (once enabled)
+- **Read the Docs**: [https://calibration-toolbox.readthedocs.io/](https://calibration-toolbox.readthedocs.io/) (once published)
 
-To build the documentation locally:
+### Build Documentation Locally
+
+To build and view the documentation website locally:
 
 ```bash
+# Option 1: Use the build script
+bash build_docs.sh
+
+# Option 2: Manual build
+pip install sphinx sphinx-rtd-theme nbsphinx
 cd docs
 make html
+
+# View the website
+python -m http.server 8000 --directory docs/_build/html
+# Then open http://localhost:8000 in your browser
 ```
 
 ## Testing

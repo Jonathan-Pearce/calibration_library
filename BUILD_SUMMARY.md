@@ -117,8 +117,11 @@ Comprehensive Jupyter notebook demonstrating:
 
 #### CI/CD and Documentation Hosting
 - `.github/workflows/tests.yml`: GitHub Actions CI for testing
+- `.github/workflows/docs.yml`: GitHub Actions for documentation deployment
 - `.readthedocs.yml`: Read the Docs configuration
 - `.github/copilot-instructions.md`: Development guidelines (existing)
+- `build_docs.sh`: Script to build documentation locally
+- `DOCUMENTATION_WEBSITE.md`: Website setup guide
 
 ## Package Structure
 
