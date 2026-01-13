@@ -1,0 +1,15 @@
+# Test dependencies
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Code quality
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+
+# Documentation
+sphinx>=6.0.0
+sphinx-rtd-theme>=1.2.0
+nbsphinx>=0.9.0
+jupyter>=1.0.0
+ipykernel>=6.0.0
