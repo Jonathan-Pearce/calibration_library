@@ -264,13 +264,20 @@ make html
 Run the test suite:
 
 ```bash
-pytest tests/
+python -m pytest tests/ -v
 ```
 
-With coverage:
+Or use the test script:
 
 ```bash
-pytest tests/ --cov=calibration_toolbox --cov-report=html
+bash run_tests.sh
+```
+
+With coverage (requires `pytest-cov`):
+
+```bash
+pip install pytest-cov
+pytest tests/ -v --cov=calibration_toolbox --cov-report=html
 ```
 
 ## Contributing

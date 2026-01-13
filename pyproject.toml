@@ -48,7 +48,7 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-addopts = "-v --cov=calibration_toolbox --cov-report=html --cov-report=term"
+addopts = "-v"
 
 [tool.black]
 line-length = 100
