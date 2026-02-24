@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -8,16 +8,24 @@ version = "0.1.0"
 description = "A Python library for evaluating machine learning model calibration"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "Jonathan Pearce"},
 ]
-keywords = ["calibration", "uncertainty", "machine-learning", "deep-learning"]
+keywords = ["calibration", "uncertainty", "machine-learning", "deep-learning", "classification", "evaluation"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Mathematics",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
 ]
 
 dependencies = [
@@ -35,6 +43,7 @@ dev = [
     "mypy>=1.0.0",
     "sphinx>=6.0.0",
     "sphinx-rtd-theme>=1.2.0",
+    "nbsphinx>=0.9.0",
 ]
 
 [project.urls]
@@ -42,6 +51,10 @@ Homepage = "https://github.com/Jonathan-Pearce/calibration-toolbox"
 Documentation = "https://calibration-toolbox.readthedocs.io/"
 Repository = "https://github.com/Jonathan-Pearce/calibration-toolbox"
 "Bug Reports" = "https://github.com/Jonathan-Pearce/calibration-toolbox/issues"
+
+[tool.setuptools.packages.find]
+include = ["calibration_toolbox*"]
+exclude = ["tests*", "docs*", "examples*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
