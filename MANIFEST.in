@@ -1,0 +1,19 @@
+include LICENSE
+include README.md
+include requirements.txt
+
+recursive-include calibration_toolbox *.py py.typed
+
+prune tests
+prune docs
+prune examples
+prune .github
+
+exclude .gitignore
+exclude .readthedocs.yml
+exclude BUILD_SUMMARY.md
+exclude CONTRIBUTING.md
+exclude DOCUMENTATION_WEBSITE.md
+exclude build_docs.sh
+exclude run_tests.sh
+exclude requirements-dev.txt
